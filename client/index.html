@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Liste des utilisateurs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody id="usersTableBody">
+            <!-- Ici, les lignes des utilisateurs seront ajoutées par le script -->
+        </tbody>
+    </table>
+
+<!-- Bouton pour ouvrir la modale -->
+<button id="openModalButton">Ajouter</button>
+
+    <!-- Formulaire pour ajouter ou modifier un utilisateur -->
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- Formulaire d'ajout d'utilisateur -->
+            <form id="userForm">
+                <div class="sousform">
+                    <label for="Nom">Nom:</label>
+                    <input type="text" id="nom" name="Nom" required><br>
+                </div>
+                <div class="sousform">
+                    <label for="Prenom">Prénom:</label>
+                    <input type="text" id="prenom" name="Prenom" required><br>
+                </div>
+                    
+                <div class="sousform">
+                    <label for="Adresse">Adresse:</label>
+                    <input type="text" id="adresse" name="Adresse" required><br>
+            </div>
+            <div class="sousform">
+                <label for="Codepostal">Code Postal:</label>
+                    <input type="text" id="codepostal" name="Codepostal" required><br>
+                </div>
+                    
+                <div class="sousform">
+                    <label for="Ville">Ville:</label>
+                    <input type="text" id="ville" name="Ville" required><br>
+                </div>
+                    
+                <div class="sousform">
+                    <label for="Telephone">Téléphone:</label>
+                    <input type="text" id="telephone" name="Telephone" required><br>
+                </div>
+                    
+                <div class="sousform"> 
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+                </div>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="form1">
+    <form id="userForm">
+        <div class="sousform">
+        <label for="Nom">Nom:</label>
+        <input type="text" id="nom" name="Nom" required><br>
+    </div>
+    <div class="sousform">
+        <label for="Prenom">Prénom:</label>
+        <input type="text" id="prenom" name="Prenom" required><br>
+    </div>
+        
+    <div class="sousform">
+        <label for="Adresse">Adresse:</label>
+        <input type="text" id="adresse" name="Adresse" required><br>
+</div>
+<div class="sousform">
+    <label for="Codepostal">Code Postal:</label>
+        <input type="text" id="codepostal" name="Codepostal" required><br>
+    </div>
+        
+    <div class="sousform">
+        <label for="Ville">Ville:</label>
+        <input type="text" id="ville" name="Ville" required><br>
+    </div>
+        
+    <div class="sousform">
+        <label for="Telephone">Téléphone:</label>
+        <input type="text" id="telephone" name="Telephone" required><br>
+    </div>
+        
+    <div class="sousform"> 
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+    </div>
+    
+
+        <button type="submit">Enregistrer</button>
+    </form>
+</div> -->
+    
+    <script src="app.js"></script>
+</body>
+</html>

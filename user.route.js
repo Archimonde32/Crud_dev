@@ -6,11 +6,14 @@ router.post('/register', userController.createUser);
 //get all users
 router.get('/all', userController.AllUsers);
 
+// // Route pour récupérer un utilisateur par son ID 
+// router.get('/:id', userController.getUser);
+
 // modifier user
-router.put('/update', userController.UpdateUsers);
+router.put('/:id', userController.UpdateUsers);
 
 // supprimer user
-router.delete('/suppr', userController.SuppUser);
+router.delete('/:id', userController.SuppUser);
 
 
 module.exports = router;

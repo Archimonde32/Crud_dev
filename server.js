@@ -27,9 +27,7 @@ app.use(
     })
 );
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-})
+
 
 
 // Routes
@@ -48,5 +46,7 @@ const start = async () => {
         console.log('Erreur lors du démarrage du serveur');
     }
 };
+
+app.use(express.static('client'));
 
 start();
