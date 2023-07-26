@@ -25,7 +25,7 @@ th {
     background: #01BDE7;
     font-style: italic;
     font-family: Inter;
-    font-size: 15px;
+    font-size: 20px;
 }
 label{
     font-weight: 300;
@@ -35,11 +35,14 @@ label{
     
 }
 
-.sousform{
+input{
     width: 197px; 
     height: 35px;
-    background: rgba(236.07, 115.16, 3.54, 0.31)
+    background: rgba(236.07, 115.16, 3.54, 0.31);
+    display: flex;
+    justify-content: center;
 }
+
 
 .modal {
     display: none; /* Masque la modale par défaut */
@@ -54,27 +57,144 @@ label{
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 423.62px; 
-    height: 298.70px; 
+    width: 323.62px; 
+    height: 488.70px; 
     left: 298.70px; 
     top: 0px; 
-    position: absolute; 
     background: white;
     border-radius: 37px;
+    display: flex;
+    justify-content: center;
 }
 
 /* Styles pour le bouton d'ouverture */
 #openModalButton {
-    background-color: #4CAF50;
+    width: 150px;
+    height: 30px;
+    margin: 20px;
+    background: #EE2E04; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border: 3.50px black solid;
     color: white;
-    padding: 10px 20px;
-    border: none;
+    padding: 0px 10px;
     cursor: pointer;
+    font-size: 20px; 
+    font-family: Inter; 
+    font-style: italic; 
+    font-weight: 600;
+    line-height: normal;
+    color: black;
 }
 
 #openModalButton:hover {
-    background-color: #45a049;
+    background-color: #a00404;
+}
+#enreg:hover {
+    background-color: #a00404;
+}
+.editbutton:hover {
+    background-color: #0746c4;
+}
+#modif:hover{
+    background-color: #0746c4;
+
+}
+.suppbutton:hover {
+    background-color: #a00404;
+}
+#enreg{
+    width: 124px; 
+    height: 25px; 
+    background: #EE2E04; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border: 3.50px black solid;
+    font-size: 14px; 
+    font-family: Inter; 
+    font-style: italic; 
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+.button1{
+    display: flex;
+    justify-content: center;
+}
+#buttonA{
+    display: flex;
+    justify-content: center;
+}
+
+.editbutton{
+    width: 124px; 
+    height: 25px; 
+    background: #7095DD; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border: 3.50px black solid;
+    font-size: 14px; 
+    font-family: Inter; 
+    font-style: italic; 
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.suppbutton{
+    width: 124px; 
+    height: 25px; 
+    background: #EE2E04; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border: 3.50px black solid;
+    font-size: 14px; 
+    font-family: Inter; 
+    font-style: italic; 
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+#modif{
+    width: 124px; 
+    height: 25px; 
+    background: #7095DD; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    border: 3.50px black solid;
+    font-size: 14px; 
+    font-family: Inter; 
+    font-style: italic; 
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer; 
+}
+.alert {
+    padding: 20px 20px; 
+    margin-bottom: 10px; 
+    border-radius: 4px;
+    width: 320px;
+    height: 45px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.alert-success {
+    background-color: #06C630; 
+    color: rgb(0, 0, 0); 
+}
+
+.alert-modif {
+    background-color: #2E2BEA; 
+    color: rgb(0, 0, 0); 
+}
+.alert-delete {
+    background-color: #EA2B2B; 
+    color: rgb(0, 0, 0); 
+}
+#alertContainer{
+    display: flex;
+    justify-content: center;
 }
