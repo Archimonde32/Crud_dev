@@ -13,9 +13,15 @@ const refreshTable = () => {
         .catch((error) => console.error('Erreur lors de la récupération des utilisateurs:', error));
 };
 
+
+
 const displayUsers = (users) => {
     const usersTableBody = document.getElementById('usersTableBody');
-
+    if (!Array.isArray(users)) {
+        // Si users n'est pas un tableau, le transformer en tableau contenant l'objet unique
+        users = [users];
+    }
+    
 
     // Parcours les utilisateurs et ajoute chaque ligne au tableau
     users.forEach((user) => {
@@ -157,14 +163,9 @@ if (type === 'success') {
         body: JSON.stringify(userData),
     })
         .then((response) => response.json())
-        .then((data) => {
-            // Met à jour le tableau avec les nouvelles données
-            fetch('/all')
-                .then((response) => response.json())
-                .then((data) => {
-                    displayUsers(data);
-                })
-                .catch((error) => console.error('Erreur lors de la récupération des utilisateurs:', error));
+        .then((users) => {
+            refreshTable();
+            showAlert('Données enregistré', 'success');
         })
         .catch((error) => console.error('Erreur lors de l\'enregistrement de l\'utilisateur:', error));
 
@@ -173,8 +174,7 @@ if (type === 'success') {
 
     closeModal();
 
-    refreshTable();
-    showAlert('Données enregistré', 'success');
+    
 });
 
 
@@ -223,7 +223,7 @@ editUserForm.addEventListener('submit', (event) => {
         body: JSON.stringify(userData),
     })
     .then((response) => response.json())
-    .then((data) => {
+    .then((users) => {
 
         
         // Réinitialise le formulaire de modification
