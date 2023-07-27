@@ -6,9 +6,6 @@ router.post('/register', userController.createUser);
 //get all users
 router.get('/all', userController.AllUsers);
 
-// // Route pour récupérer un utilisateur par son ID 
-// router.get('/:id', userController.getUser);
-
 // modifier user
 router.put('/:id', userController.UpdateUsers);
 

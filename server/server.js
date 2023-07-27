@@ -47,6 +47,6 @@ const start = async () => {
     }
 };
 
-app.use(express.static('client'));
+app.use(express.static('../client'));
 
 start();

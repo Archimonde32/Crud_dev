@@ -260,16 +260,6 @@ const deleteUser = (userId) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Récupérer les utilisateurs depuis le backend
 fetch('/all')
     .then((response) => response.json())

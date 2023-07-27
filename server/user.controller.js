@@ -40,20 +40,6 @@ const AllUsers = (req, res) =>{
 }
 
 
-//selectionner un client
-// const getUser = (req, res) => {
-//     const userId = req.params.id;
-//     const query = 'SELECT * FROM client WHERE id = ?';
-//     conn.query(query, [userId], (err, result) => {
-//         if (err) {
-//             return res.status(500).json({ error: err.message });
-//         } else if (result.length === 0) {
-//             return res.status(404).json({ message: 'Utilisateur non trouvé' });
-//         } else {
-//             res.status(200).json(result[0]);
-//         }
-//     });
-// };
 
 
 // modifier un client
