@@ -1,3 +1,16 @@
+
+//Récupérer les utilisateurs depuis le backend
+fetch('/all')
+    .then((response) => response.json())
+    .then((data) => {
+        // Affiche les utilisateurs dans le tableau
+        displayUsers(data.result);
+    })
+    .catch((error) => console.error('Erreur lors de la récupération des utilisateurs:', error));
+
+
+
+
 const refreshTable = () => {
     // Récupérer les utilisateurs depuis le backend
     fetch('/all')
@@ -21,7 +34,7 @@ const displayUsers = (users) => {
         // Si users n'est pas un tableau, le transformer en tableau contenant l'objet unique
         users = [users];
     }
-    
+
 
     // Parcours les utilisateurs et ajoute chaque ligne au tableau
     users.forEach((user) => {
@@ -46,7 +59,7 @@ const displayUsers = (users) => {
         const openEditModal = (user) => {
             const editModal = document.getElementById('editModal');
             editModal.style.display = 'block';
-        
+
             // Remplir le formulaire avec les données de l'utilisateur
             const editUserForm = document.getElementById('editUserForm');
             editUserForm.elements["Nom"].value = user.Nom;
@@ -61,7 +74,7 @@ const displayUsers = (users) => {
             editUserForm.dataset.userId = userId;
         };
 
-            // Bouton Modifier
+        // Bouton Modifier
         const editButtonCell = document.createElement('td');
         const editButton = document.createElement('button');
         editButton.textContent = "Modifier";
@@ -130,26 +143,26 @@ userForm.addEventListener('submit', (event) => {
         userData[key] = value;
     });
 
-//alerte 
-const showAlert = (message,type) => {
-    const alertContainer = document.getElementById('alertContainer');
-    const alertDiv = document.createElement('div');
-    alertDiv.textContent = message;
-if (type === 'success') {
-    alertDiv.classList.add('alert', 'alert-success');
-}else if(type ==='modif'){
-    alertDiv.classList.add('alert', 'alert-modif');
-}else if(type === 'delete'){
-    alertDiv.classList.add('alert', 'alert-delete');
-}
+    //alerte 
+    const showAlert = (message, type) => {
+        const alertContainer = document.getElementById('alertContainer');
+        const alertDiv = document.createElement('div');
+        alertDiv.textContent = message;
+        if (type === 'success') {
+            alertDiv.classList.add('alert', 'alert-success');
+        } else if (type === 'modif') {
+            alertDiv.classList.add('alert', 'alert-modif');
+        } else if (type === 'delete') {
+            alertDiv.classList.add('alert', 'alert-delete');
+        }
 
-    alertContainer.appendChild(alertDiv);
+        alertContainer.appendChild(alertDiv);
 
-    // Masquer l'alerte après quelques secondes 
-    setTimeout(() => {
-        alertDiv.remove();
-    }, 3000); // Masquer l'alerte après 3 secondes 
-};
+        // Masquer l'alerte après quelques secondes 
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 3000); // Masquer l'alerte après 3 secondes 
+    };
 
 
 
@@ -174,22 +187,22 @@ if (type === 'success') {
 
     closeModal();
 
-    
+
 });
 
 
 //alerte 
-const showAlert = (message,type) => {
+const showAlert = (message, type) => {
     const alertContainer = document.getElementById('alertContainer');
     const alertDiv = document.createElement('div');
     alertDiv.textContent = message;
-if (type === 'success') {
-    alertDiv.classList.add('alert', 'alert-success');
-}else if(type ==='modif'){
-    alertDiv.classList.add('alert', 'alert-modif');
-}else if(type === 'delete'){
-    alertDiv.classList.add('alert', 'alert-delete');
-}
+    if (type === 'success') {
+        alertDiv.classList.add('alert', 'alert-success');
+    } else if (type === 'modif') {
+        alertDiv.classList.add('alert', 'alert-modif');
+    } else if (type === 'delete') {
+        alertDiv.classList.add('alert', 'alert-delete');
+    }
 
     alertContainer.appendChild(alertDiv);
 
@@ -215,31 +228,31 @@ editUserForm.addEventListener('submit', (event) => {
     const userId = editUserForm.dataset.userId;
 
     // Envoie les données au backend pour mise à jour
-    fetch(`/${userId}`, { 
+    fetch(`/${userId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(userData),
     })
-    .then((response) => response.json())
-    .then((users) => {
+        .then((response) => response.json())
+        .then((users) => {
 
-        
-        // Réinitialise le formulaire de modification
-        editUserForm.reset();
 
-        // Ferme la modale de modification après avoir soumis le formulaire
-        closeEditModal();
+            // Réinitialise le formulaire de modification
+            editUserForm.reset();
 
-        // Actualiser le tableau avec les dernières données depuis le backend
-        refreshTable();
+            // Ferme la modale de modification après avoir soumis le formulaire
+            closeEditModal();
 
-        showAlert('Données modifier', 'modif');
-        
-    })
-    .catch((error) => console.error('Erreur lors de la mise à jour de l\'utilisateur:', error));
-    
+            // Actualiser le tableau avec les dernières données depuis le backend
+            refreshTable();
+
+            showAlert('Données modifier', 'modif');
+
+        })
+        .catch((error) => console.error('Erreur lors de la mise à jour de l\'utilisateur:', error));
+
 });
 
 const deleteUser = (userId) => {
@@ -247,24 +260,17 @@ const deleteUser = (userId) => {
         fetch(`/${userId}`, {
             method: 'DELETE',
         })
-        .then((response) => response.json())
-        .then((data) => {
+            .then((response) => response.json())
+            .then((data) => {
                 showAlert('Données supprimées', 'delete');
 
-                
+
                 refreshTable();
-        })
-        .catch((error) => console.error('Erreur lors de la suppression de l\'utilisateur:', error));
+            })
+            .catch((error) => console.error('Erreur lors de la suppression de l\'utilisateur:', error));
     }
 };
 
 
 
-// Récupérer les utilisateurs depuis le backend
-fetch('/all')
-    .then((response) => response.json())
-    .then((data) => {
-        // Affiche les utilisateurs dans le tableau
-        displayUsers(data.result);
-    })
-    .catch((error) => console.error('Erreur lors de la récupération des utilisateurs:', error));
+

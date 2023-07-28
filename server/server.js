@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./user.route');
 const cors = require('cors');
 
+
 // Connexion à la base de données
 const connectDB = require('./db');
 
@@ -29,7 +30,6 @@ app.use(
 
 
 
-
 // Routes
 app.use('/', userRoutes);
 
@@ -38,7 +38,7 @@ app.use('/', userRoutes);
 const start = async () => {
     try {
         await connectDB();
-        const port = process.env.PORT || 5000;
+        const port = process.env.PORT || 8080;
         app.listen(port, () => {
             console.log(`Le serveur a démarré sur le port ${port}`);
         })
@@ -48,5 +48,8 @@ const start = async () => {
 };
 
 app.use(express.static('../client'));
+
+
+
 
 start();
