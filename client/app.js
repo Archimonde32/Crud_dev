@@ -1,5 +1,6 @@
 
 //Récupérer les utilisateurs depuis le backend
+
 fetch('/all')
     .then((response) => response.json())
     .then((data) => {
@@ -30,10 +31,6 @@ const refreshTable = () => {
 
 const displayUsers = (users) => {
     const usersTableBody = document.getElementById('usersTableBody');
-    if (!Array.isArray(users)) {
-        // Si users n'est pas un tableau, le transformer en tableau contenant l'objet unique
-        users = [users];
-    }
 
 
     // Parcours les utilisateurs et ajoute chaque ligne au tableau
